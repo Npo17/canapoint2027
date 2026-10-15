@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aruba · Abril 2027 · Comparador de viaje</title>
-  <meta name="description" content="Vuelos, departamentos y autos para viajar a Aruba en abril de 2027: comparativa de precios para 2 personas con un presupuesto de USD 3.000.">
+  <title>Punta Cana · Enero 2027 · Precios por semana</title>
+  <meta name="description" content="Vuelo directo Rosario–Punta Cana, Bahia Principe Explore Esmeralda, traslado y Universal Assistance: precios para 2 personas en cada semana de enero de 2027.">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow">Abril 2027 · 2 personas · 7 noches</p>
-      <h1>Viaje a Aruba</h1>
-      <p class="lead">Vuelos, departamento, auto para moverse por la isla y asistencia al viajero, con un tope de <strong>USD 3.000 para los dos</strong> (sin comidas). Precios consultados el 4 de octubre de 2026 en Despegar, Copa, Aerolíneas Argentinas, Airbnb, rentadoras de Aruba, Assist Card y Universal Assistance.</p>
+      <p class="eyebrow">Enero 2027 · 2 personas · 7 noches</p>
+      <h1>Punta Cana desde Rosario</h1>
+      <p class="lead">Vuelo <strong>directo</strong> de Arajet Rosario ↔ Punta Cana, 7 noches todo incluido en el <strong>Bahia Principe Explore Esmeralda</strong> (ex Luxury Esmeralda), traslado aeropuerto–hotel y Universal Assistance. Todos los precios son para los dos y se consultaron el 14 de octubre de 2026.</p>
       <nav class="toc" aria-label="Secciones">
-        <a href="#combinaciones">Combinaciones</a>
-        <a href="#calculadora">Calculadora</a>
-        <a href="#vuelos">Vuelos</a>
-        <a href="#deptos">Departamentos</a>
-        <a href="#autos">Auto</a>
+        <a href="#resumen">Resumen</a>
+        <a href="#semanas">Semana por semana</a>
+        <a href="#vuelos">Vuelos y equipaje</a>
+        <a href="#hotel">Hotel</a>
+        <a href="#traslado">Traslado</a>
         <a href="#asistencia">Asistencia</a>
         <a href="#antes">Antes de comprar</a>
       </nav>
@@ -27,207 +27,314 @@
   </header>
 
   <main class="wrap">
-    <section id="combinaciones" class="section">
+    <section id="resumen" class="section">
       <div class="section-head">
-        <h2>Tres combinaciones que entran en USD 3.000</h2>
-        <p class="muted">Incluyen vuelos, depto, auto, asistencia al viajero y la ED card. Cada total va del precio publicado al peor caso: que el departamento cobre aparte el impuesto turístico de Aruba (12,5% + USD 3 por noche).</p>
+        <h2>Las tres semanas más baratas</h2>
+        <p class="muted">Las cuatro opciones más baratas están a menos de USD 80 de diferencia, así que conviene elegir por horario. La del lunes 11 al 18 es la más barata que cae entera en enero y la vuelta llega el mismo día.</p>
       </div>
-      <div class="packages" id="packages"></div>
-    </section>
-
-    <section id="calculadora" class="section">
-      <div class="section-head">
-        <h2>Armá tu combinación</h2>
-        <p class="muted">Elegí fechas, vuelo, departamento, seguro del auto y asistencia. El total se recalcula al instante.</p>
-      </div>
-      <div class="calc">
-        <div class="calc-controls card">
-          <div class="control">
-            <span class="control-label">Fechas</span>
-            <div class="seg" data-key="dates">
-              <button type="button" data-value="A">11 al 18 de abril</button>
-              <button type="button" data-value="B">18 al 25 de abril</button>
-            </div>
-          </div>
-          <label class="control">
-            <span class="control-label">Vuelo ida y vuelta (2 personas)</span>
-            <select id="sel-flight"></select>
-          </label>
-          <div class="control">
-            <span class="control-label">Pago del vuelo</span>
-            <div class="seg" data-key="pay">
-              <button type="button" data-value="credit">Tarjeta de crédito</button>
-              <button type="button" data-value="debit">Débito</button>
-            </div>
-          </div>
-          <label class="check">
-            <input type="checkbox" id="bag">
-            <span id="bag-label">Sumar valija despachada</span>
-          </label>
-          <label class="control">
-            <span class="control-label">Departamento (7 noches)</span>
-            <select id="sel-apt"></select>
-          </label>
-          <div class="control">
-            <span class="control-label">Seguro del auto (CDW)</span>
-            <div class="seg" data-key="cdw">
-              <button type="button" data-value="agency">De la rentadora (+USD 77)</button>
-              <button type="button" data-value="card">Lo cubre mi tarjeta</button>
-            </div>
-          </div>
-          <label class="control">
-            <span class="control-label">Asistencia al viajero (2 personas)</span>
-            <select id="sel-ins"></select>
-          </label>
-          <div class="control">
-            <span class="control-label">Impuesto turístico del depto</span>
-            <div class="seg" data-key="levy">
-              <button type="button" data-value="add">Sumarlo por las dudas</button>
-              <button type="button" data-value="included">Ya viene incluido</button>
-            </div>
+      <div class="options card">
+        <div class="control">
+          <span class="control-label">Equipaje (para los dos)</span>
+          <div class="seg" data-key="luggage">
+            <button type="button" data-value="classic">2 carry-on + 1 valija</button>
+            <button type="button" data-value="basic">Solo mochila</button>
+            <button type="button" data-value="comfort">2 valijas</button>
+            <button type="button" data-value="extra">2 carry-on + 2 valijas</button>
           </div>
         </div>
-        <div class="calc-result card" id="calc-result" aria-live="polite"></div>
+        <div class="control">
+          <span class="control-label">Habitación</span>
+          <div class="seg" data-key="room">
+            <button type="button" data-value="deluxe">Junior Suite Deluxe</button>
+            <button type="button" data-value="swimup">Junior Suite con piscina</button>
+          </div>
+        </div>
+        <div class="control">
+          <span class="control-label">Asistencia al viajero</span>
+          <div class="seg" data-key="ins">
+            <button type="button" data-value="oro">Universal Oro</button>
+            <button type="button" data-value="plata">Universal Plata</button>
+            <button type="button" data-value="none">Sin asistencia</button>
+          </div>
+        </div>
+        <div class="control">
+          <span class="control-label">Traslado aeropuerto–hotel</span>
+          <div class="seg" data-key="transfer">
+            <button type="button" data-value="private">Privado ida y vuelta</button>
+            <button type="button" data-value="none">Sin traslado</button>
+          </div>
+        </div>
+        <p class="includes" id="includes" aria-live="polite"></p>
       </div>
+      <div class="packages" id="top"></div>
+    </section>
+
+    <section id="semanas" class="section">
+      <div class="section-head">
+        <h2>Semana por semana</h2>
+        <p class="muted">Arajet vuela directo los domingos, lunes y martes. Cada fila es una estadía de 7 noches con el total para los dos, según lo que elijas arriba. En verde, la más barata de cada semana.</p>
+      </div>
+      <div class="toolbar">
+        <div class="seg" data-key="sort">
+          <button type="button" data-value="week">Por semana</button>
+          <button type="button" data-value="price">Más barato primero</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="trips-table stack">
+          <thead>
+            <tr>
+              <th>Ida</th>
+              <th>Vuelta</th>
+              <th class="num">Vuelo (2 personas)</th>
+              <th class="num">Total 2 personas</th>
+              <th><span class="visually-hidden">Links</span></th>
+            </tr>
+          </thead>
+          <tbody id="trips-body"></tbody>
+        </table>
+      </div>
+      <p class="note" id="feb-note"></p>
+      <p class="note">El precio del vuelo es la tarifa más barata de Arajet (Basic, solo mochila); el equipaje se suma aparte. «Vuelo» abre Google Flights con la búsqueda de directos, donde aparecen Arajet y Despegar; «Hotel» abre Booking con las fechas cargadas.</p>
     </section>
 
     <section id="vuelos" class="section">
       <div class="section-head">
-        <h2>Vuelos</h2>
-        <p class="muted">Ida y vuelta para 2 adultos, precio final en USD. Pagando en dólares no se cobra la percepción RG 5617.</p>
-      </div>
-      <div class="toolbar">
-        <div class="seg" data-key="dates">
-          <button type="button" data-value="A">11–18 abr</button>
-          <button type="button" data-value="B">18–25 abr</button>
-        </div>
-        <div class="seg" data-key="origin">
-          <button type="button" data-value="all">Todas las salidas</button>
-          <button type="button" data-value="ROS">Rosario</button>
-          <button type="button" data-value="BUE">Buenos Aires</button>
-        </div>
-        <div class="seg" data-key="flightSort">
-          <button type="button" data-value="price">Más barato</button>
-          <button type="button" data-value="duration">Más corto</button>
-        </div>
+        <h2>Vuelos y equipaje</h2>
+        <p class="muted">Arajet es la única aerolínea con vuelo directo Rosario–Punta Cana, de unas 7 h 40 m. En enero sale tres veces por semana, siempre en el mismo horario.</p>
       </div>
       <div class="table-wrap">
-        <table class="flights-table stack">
+        <table class="stack">
           <thead>
             <tr>
-              <th>Opción</th>
-              <th>Ida</th>
-              <th>Vuelta</th>
-              <th>Equipaje</th>
-              <th class="num">Total 2 personas</th>
-              <th><span class="visually-hidden">Acciones</span></th>
+              <th>Día</th>
+              <th>Ida Rosario → Punta Cana</th>
+              <th>Vuelta Punta Cana → Rosario</th>
+              <th>Tener en cuenta</th>
             </tr>
           </thead>
-          <tbody id="flights-body"></tbody>
+          <tbody>
+            <tr>
+              <td class="nowrap"><strong>Domingo</strong></td>
+              <td data-label="Ida">03:39 → 10:22</td>
+              <td data-label="Vuelta">20:15 → 04:55 del lunes</td>
+              <td data-label="Tener en cuenta">Hay que estar en el aeropuerto el sábado a la noche.</td>
+            </tr>
+            <tr>
+              <td class="nowrap"><strong>Lunes</strong></td>
+              <td data-label="Ida">05:55 → 12:38</td>
+              <td data-label="Vuelta">14:38 → 23:18</td>
+              <td data-label="Tener en cuenta">La vuelta es de día y llegan el mismo lunes a la noche.</td>
+            </tr>
+            <tr>
+              <td class="nowrap"><strong>Martes</strong></td>
+              <td data-label="Ida">01:12 → 07:55</td>
+              <td data-label="Vuelta">18:10 → 02:50 del miércoles</td>
+              <td data-label="Tener en cuenta">Sale el lunes a la noche, pasada la medianoche.</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <p class="note" id="flights-others"></p>
-      <p class="note">LATAM: la tarifa Light incluye mochila y carry-on de 12 kg por persona. Pasar a Standard (valija de 23 kg) cuesta USD 92 más por persona; Full (cambios y reembolso sin penalidad) USD 228 y Premium Economy USD 354. En latamairlines.com la búsqueda dio error, por eso el precio de LATAM es el de Despegar.</p>
 
-      <h3>¿Qué fechas convienen?</h3>
+      <h3>Tarifas de Arajet</h3>
+      <div class="table-wrap">
+        <table class="stack">
+          <thead>
+            <tr>
+              <th>Tarifa</th>
+              <th>Qué incluye por persona</th>
+              <th class="num">Extra por persona, ida y vuelta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Basic</strong></td>
+              <td data-label="Incluye">Mochila de 40×25×20 cm y hasta 6 kg. Sin carry-on ni valija.</td>
+              <td class="num" data-label="Extra por persona">USD 0</td>
+            </tr>
+            <tr class="is-selected">
+              <td><strong>Classic</strong><div class="badges"><span class="badge rec">La que les sirve</span></div></td>
+              <td data-label="Incluye">Mochila + carry-on de 12 kg + elección de asiento. La valija se paga aparte.</td>
+              <td class="num" data-label="Extra por persona">USD 46</td>
+            </tr>
+            <tr>
+              <td><strong>Comfort</strong></td>
+              <td data-label="Incluye">Mochila + valija de 23 kg + asiento. Sin carry-on.</td>
+              <td class="num" data-label="Extra por persona">USD 61</td>
+            </tr>
+            <tr>
+              <td><strong>Extra</strong></td>
+              <td data-label="Incluye">Mochila + carry-on + valija de 23 kg + asiento y embarque prioritario. Cambios de fecha sin cargo.</td>
+              <td class="num" data-label="Extra por persona">USD 210</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note"><strong>Para 1 valija y 2 carry-on:</strong> tarifa Classic para los dos (USD 92) y una valija de 23 kg agregada en la misma compra. Arajet la cobra desde USD 33 por tramo (≈ USD 66 ida y vuelta); si la agregan después, desde USD 50 por tramo, y en el aeropuerto desde USD 70. Las tarifas son las que muestra Despegar para el 11 al 18 de enero; para el 31 de enero, Classic y Comfort cuestan USD 44 y USD 59.</p>
+
+      <h3>¿Dónde conviene comprar el vuelo?</h3>
       <div class="table-wrap">
         <table class="stack">
           <thead>
             <tr>
               <th>Fechas</th>
-              <th>Mejor desde Rosario</th>
-              <th>Mejor desde Buenos Aires</th>
-              <th>Comentario</th>
+              <th class="num">Arajet</th>
+              <th class="num">kiss&amp;fly</th>
+              <th class="num">Despegar</th>
             </tr>
           </thead>
-          <tbody id="dates-body"></tbody>
+          <tbody>
+            <tr>
+              <td>Lunes 11 al 18 de enero</td>
+              <td class="num" data-label="Arajet"><strong>USD 2.325</strong></td>
+              <td class="num" data-label="kiss&amp;fly">USD 2.378</td>
+              <td class="num" data-label="Despegar">USD 2.555<span class="sub">USD 2.453 con débito</span></td>
+            </tr>
+            <tr>
+              <td>Domingo 31 de enero al 7 de febrero</td>
+              <td class="num" data-label="Arajet"><strong>USD 2.289</strong></td>
+              <td class="num" data-label="kiss&amp;fly">Sin dato</td>
+              <td class="num" data-label="Despegar">USD 2.438<span class="sub">USD 2.340 con débito</span></td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <p class="note">Los valores con ≈ salen de Google Flights; el resto, de Despegar.</p>
+      <p class="note">Precio para los dos con la tarifa Basic. En la web de Arajet sale más barato; Despegar tiene la ventaja de sumar la Universal en la misma compra. Google Flights marca estos precios como altos para la ruta (viajes parecidos suelen costar entre USD 1.100 y 2.100, contando vuelos con escala), así que vale la pena activar una alerta de precio.</p>
     </section>
 
-    <section id="deptos" class="section">
+    <section id="hotel" class="section">
       <div class="section-head">
-        <h2>Departamentos</h2>
-        <p class="muted">Airbnb, departamento entero para 2 con pileta y aire acondicionado, entre Eagle Beach, Palm Beach y Noord. Precio total que muestra Airbnb para 7 noches.</p>
-      </div>
-      <div class="toolbar">
-        <div class="seg" data-key="dates">
-          <button type="button" data-value="A">11–18 abr</button>
-          <button type="button" data-value="B">18–25 abr</button>
-        </div>
-        <div class="seg" data-key="aptSort">
-          <button type="button" data-value="price">Más barato</button>
-          <button type="button" data-value="rating">Mejor puntaje</button>
-        </div>
-      </div>
-      <p class="note note-top">«Viaje completo» suma el vuelo, el auto, la asistencia y las opciones elegidas en la calculadora.</p>
-      <div class="apts" id="apts"></div>
-    </section>
-
-    <section id="autos" class="section">
-      <div class="section-head">
-        <h2>Auto</h2>
-        <p class="muted">Un económico automático alcanza para recorrer la isla. La calculadora usa Jay's porque es la única que publica tarifas con fechas de 2027. Royal puede salir más barato, pero hay que confirmar los impuestos.</p>
+        <h2>Bahia Principe Explore Esmeralda</h2>
+        <p class="muted">Todo incluido, dentro del complejo Bahia Principe de Punta Cana (playa Arena Gorda). Es parte de Hyatt Inclusive Collection y no es solo para adultos. En Booking cuesta lo mismo en todas las semanas de enero.</p>
       </div>
       <div class="table-wrap">
         <table class="stack">
           <thead>
             <tr>
-              <th>Rentadora</th>
-              <th>Auto</th>
-              <th>Tarifa</th>
-              <th>Seguro</th>
-              <th>7 días · 11–18</th>
-              <th>7 días · 18–25</th>
+              <th>Habitación</th>
+              <th>Qué tiene</th>
+              <th class="num">7 noches, 2 personas</th>
+              <th><span class="visually-hidden">Acciones</span></th>
             </tr>
           </thead>
-          <tbody id="cars-body"></tbody>
+          <tbody>
+            <tr>
+              <td><strong>Junior Suite Deluxe King</strong></td>
+              <td data-label="Qué tiene">Cama king, todo incluido.</td>
+              <td class="num" data-label="7 noches, 2 personas"><strong>USD 3.265</strong><span class="sub">Antes USD 5.936 (−45%)</span></td>
+              <td><a class="btn small ghost" href="https://www.booking.com/hotel/do/luxury-bahia-principe-esmeralda-punta-cana2.es.html?checkin=2027-01-11&amp;checkout=2027-01-18&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+            <tr>
+              <td><strong>Junior Suite Premium con piscina</strong></td>
+              <td data-label="Qué tiene">Cama king y salida directa a una piscina desde la habitación, todo incluido.</td>
+              <td class="num" data-label="7 noches, 2 personas"><strong>USD 3.804</strong><span class="sub">Antes USD 6.916 (−45%)</span></td>
+              <td><a class="btn small ghost" href="https://www.booking.com/hotel/do/luxury-bahia-principe-esmeralda-punta-cana2.es.html?checkin=2027-01-11&amp;checkout=2027-01-18&amp;group_adults=2&amp;no_rooms=1&amp;selected_currency=USD" target="_blank" rel="noopener">Ver en Booking</a></td>
+            </tr>
+          </tbody>
         </table>
       </div>
+      <p class="note">Precios con impuestos y cargos incluidos. Cancelación gratis hasta 7 días antes de la llegada.</p>
+    </section>
+
+    <section id="traslado" class="section">
+      <div class="section-head">
+        <h2>Traslado aeropuerto–hotel</h2>
+        <p class="muted">El hotel queda a unos 30 minutos del aeropuerto de Punta Cana y no incluye el traslado. Estas son opciones privadas para los dos, con chofer esperándolos en el aeropuerto.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="stack">
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Tipo</th>
+              <th class="num">Precio, hasta 6 personas</th>
+              <th><span class="visually-hidden">Acciones</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Next Ride Punta Cana</strong></td>
+              <td data-label="Tipo">Privado, en van</td>
+              <td class="num" data-label="Precio"><strong>USD 70</strong><span class="sub">ida y vuelta</span></td>
+              <td><a class="btn small ghost" href="https://nextridepuntacana.com/transfer-bahia-principe" target="_blank" rel="noopener">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>PUJ Airport Shuttle</strong></td>
+              <td data-label="Tipo">Privado</td>
+              <td class="num" data-label="Precio"><strong>USD 75</strong><span class="sub">ida y vuelta (USD 40 un tramo)</span></td>
+              <td><a class="btn small ghost" href="https://pujairportshuttle.com/to/bahia-principe-luxury-esmeralda" target="_blank" rel="noopener">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Cana Transfer</strong></td>
+              <td data-label="Tipo">Privado</td>
+              <td class="num" data-label="Precio"><strong>USD 80</strong><span class="sub">USD 40 cada tramo</span></td>
+              <td><a class="btn small ghost" href="https://canatransfer.com/puj-airport-transfers/private-puj-airport-transfer-to-bahia-principe-luxury-esmeralda/" target="_blank" rel="noopener">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Los totales usan USD 75. Son precios publicados en la web de cada empresa; no se pidió cotización.</p>
     </section>
 
     <section id="asistencia" class="section">
       <div class="section-head">
-        <h2>Asistencia al viajero</h2>
-        <p class="muted">Precio para los dos (cotizado para 2 adultos de 30 años) del 11 al 19 de abril: 9 días, hasta que aterrizan de vuelta. Del 18 al 26 cuesta lo mismo. No es obligatoria para entrar a Aruba, pero la atención médica para turistas se paga.</p>
+        <h2>Universal Assistance</h2>
+        <p class="muted">Precio para los dos que muestra Despegar al sumarla al vuelo. Las salidas de lunes cubren 8 días; las de domingo y martes cubren 9, porque la vuelta aterriza después de medianoche.</p>
       </div>
       <div class="table-wrap">
-        <table class="ins-table stack">
+        <table class="stack">
           <thead>
             <tr>
               <th>Plan</th>
-              <th>Cobertura médica</th>
-              <th>Incluye</th>
-              <th class="num">Total 2 personas</th>
-              <th><span class="visually-hidden">Acciones</span></th>
+              <th>Cobertura</th>
+              <th class="num">8 días (lunes)</th>
+              <th class="num">9 días (domingo y martes)</th>
             </tr>
           </thead>
-          <tbody id="ins-body"></tbody>
+          <tbody>
+            <tr>
+              <td><strong>Universal Oro</strong></td>
+              <td data-label="Cobertura">Médica hasta USD 100.000 · equipaje perdido USD 1.200 · vuelo demorado USD 120</td>
+              <td class="num" data-label="8 días (lunes)"><strong>USD 112</strong></td>
+              <td class="num" data-label="9 días (domingo y martes)"><strong>USD 125</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Universal Plata</strong></td>
+              <td data-label="Cobertura">Médica hasta USD 50.000 · equipaje perdido USD 1.000 · vuelo demorado USD 100</td>
+              <td class="num" data-label="8 días (lunes)">USD 89</td>
+              <td class="num" data-label="9 días (domingo y martes)">USD 98</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <p class="note">Universal tiene entre 35% y 50% de descuento comprando hasta el 12 de octubre de 2026, aunque el viaje sea en abril. La promo actual de Assist Card (hasta 55% con Galicia, Santander, BBVA y Macro) solo vale para viajes que empiezan hasta el 31 de marzo de 2027, así que no aplica.</p>
-      <p class="note">Las dos cobran en pesos; los valores en dólares son aproximados, a unos ARS 1.540 por dólar. Algunas tarjetas de crédito incluyen asistencia si pagan los pasajes con ellas: si la de ustedes la tiene, revisen cuánto cubre.</p>
+      <p class="note">Las dos se pueden cancelar gratis. Si compran el vuelo en la web de Arajet, la asistencia se compra aparte (en Universal o en Despegar › Asistencias) y el precio puede cambiar.</p>
     </section>
 
     <section id="antes" class="section">
       <div class="section-head">
         <h2>Antes de comprar</h2>
       </div>
-      <ul class="checklist" id="checklist"></ul>
+      <ul class="checklist">
+        <li><strong>Horarios de madrugada</strong><span>El domingo sale a las 03:39 y el martes a la 01:12: hay que ir al aeropuerto la noche anterior. El lunes sale a las 05:55 y la vuelta llega el mismo lunes a las 23:18.</span></li>
+        <li><strong>Equipaje</strong><span>La tarifa Basic solo incluye una mochila de 6 kg. Elijan Classic (carry-on de 12 kg) y agreguen la valija de 23 kg en la misma compra, que es cuando sale más barata.</span></li>
+        <li><strong>Hotel con cancelación gratis</strong><span>Booking deja cancelar sin cargo hasta 7 días antes de llegar, así que se puede reservar ahora. Como el hotel cuesta lo mismo todo enero, lo que define la semana es el vuelo.</span></li>
+        <li><strong>Pago en dólares</strong><span>Si pagan con tarjeta y cancelan el resumen en pesos, se suma la percepción del 30% (RG 5617). Pagando el resumen en dólares no se cobra.</span></li>
+        <li><strong>Entrada a República Dominicana</strong><span>Pasaporte vigente y el e-Ticket de migración, que es gratis y se completa online antes de la ida y antes de la vuelta en <a href="https://eticket.migracion.gob.do" target="_blank" rel="noopener">eticket.migracion.gob.do</a>.</span></li>
+        <li><strong>Precios</strong><span>Son del 14 de octubre de 2026 y no se hizo ninguna reserva. Los vuelos cambian todos los días: activen una alerta de precio en Google Flights para las fechas que les gusten.</span></li>
+      </ul>
     </section>
   </main>
 
   <footer class="footer">
     <div class="wrap">
-      <p><strong>Fuentes.</strong> Consultadas el 4 de octubre de 2026. Los precios cambian todo el tiempo y no se hizo ninguna reserva.</p>
+      <p><strong>Fuentes.</strong> Consultadas el 14 de octubre de 2026.</p>
       <ul>
-        <li>Vuelos: <a href="https://www.despegar.com.ar" target="_blank" rel="noopener">Despegar</a>, <a href="https://www.copaair.com" target="_blank" rel="noopener">Copa</a>, <a href="https://www.aerolineas.com.ar" target="_blank" rel="noopener">Aerolíneas Argentinas</a> y Google Flights (fechas alternativas desde Ezeiza).</li>
-        <li>Departamentos: <a href="https://www.airbnb.com.ar" target="_blank" rel="noopener">Airbnb</a>.</li>
-        <li>Autos: <a href="https://www.jayscarrentalaruba.com/cars-rates/economy/" target="_blank" rel="noopener">Jay's Car Rental</a>, <a href="https://www.arubaroyal.com/deals/" target="_blank" rel="noopener">Royal Car Rental</a> y <a href="https://www.valuearuba.com/lowseason.php" target="_blank" rel="noopener">Value Car Rental</a>.</li>
-        <li>Asistencia al viajero: <a href="https://www.universal-assistance.com/ar/" target="_blank" rel="noopener">Universal Assistance</a> y <a href="https://www.assistcard.com/ar" target="_blank" rel="noopener">Assist Card</a>.</li>
-        <li>Impuesto turístico: <a href="https://www.grantthornton.aw/globalassets/__shared__/newsflash---regulation-and-tax-compliance-with-respect-to-your-vacation-home-in-aruba.pdf" target="_blank" rel="noopener">Grant Thornton Aruba</a>. Ingreso al país: <a href="https://www.edcardaruba.aw" target="_blank" rel="noopener">ED card de Aruba</a> y <a href="https://www.aruba.com/es/planea-tu-visita/como-llegar-a-aruba/requisitos" target="_blank" rel="noopener">requisitos en aruba.com</a>.</li>
+        <li>Vuelos: <a href="https://www.google.com/travel/flights?hl=es&amp;curr=USD" target="_blank" rel="noopener">Google Flights</a> (precio de Arajet para cada fecha y opciones de compra), <a href="https://www.despegar.com.ar" target="_blank" rel="noopener">Despegar</a> (tarifas de Arajet y precio en Despegar) y <a href="https://www.arajet.com/es-do/tarifas-de-equipaje" target="_blank" rel="noopener">Arajet</a> (precio del equipaje).</li>
+        <li>Hotel: <a href="https://www.booking.com/hotel/do/luxury-bahia-principe-esmeralda-punta-cana2.es.html" target="_blank" rel="noopener">Booking</a>, revisado para cada fecha de salida de enero.</li>
+        <li>Traslado: <a href="https://nextridepuntacana.com/transfer-bahia-principe" target="_blank" rel="noopener">Next Ride</a>, <a href="https://pujairportshuttle.com/to/bahia-principe-luxury-esmeralda" target="_blank" rel="noopener">PUJ Airport Shuttle</a> y <a href="https://canatransfer.com/puj-airport-transfers/private-puj-airport-transfer-to-bahia-principe-luxury-esmeralda/" target="_blank" rel="noopener">Cana Transfer</a>.</li>
+        <li>Asistencia: Universal Assistance, cotizada en el paso de asistencia de Despegar.</li>
       </ul>
+      <p>La página del viaje a Aruba de abril 2027 está en <a href="aruba/">npo17.github.io/canapoint2027/aruba</a>.</p>
     </div>
   </footer>
 </body>
