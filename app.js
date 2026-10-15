@@ -6,63 +6,34 @@ const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 
 const WEEKDAYS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 
 const SCHEDULE = {
-  dom: {
-    out: 'ROS 03:39 → PUJ 10:22',
-    back: 'PUJ 20:15 → ROS 04:55 del lunes',
-    days: 9,
-    hint: 'Salen el sábado a la noche y la vuelta llega el lunes de madrugada.',
-  },
-  lun: {
-    out: 'ROS 05:55 → PUJ 12:38',
-    back: 'PUJ 14:38 → ROS 23:18',
-    days: 8,
-    hint: 'La vuelta es de día y llegan el mismo lunes a la noche.',
-  },
-  mar: {
-    out: 'ROS 01:12 → PUJ 07:55',
-    back: 'PUJ 18:10 → ROS 02:50 del miércoles',
-    days: 9,
-    hint: 'Salen el lunes a la noche y llegan al hotel a la mañana.',
-  },
+  dom: { out: 'ROS 03:39 → PUJ 10:22', back: 'PUJ 20:15 → ROS 04:55 del lunes', days: 9 },
+  lun: { out: 'ROS 05:55 → PUJ 12:38', back: 'PUJ 14:38 → ROS 23:18', days: 8 },
+  mar: { out: 'ROS 01:12 → PUJ 07:55', back: 'PUJ 18:10 → ROS 02:50 del miércoles', days: 9 },
 };
 
 /* Tarifa Basic de Arajet, ida y vuelta para 2 (Google Flights). */
 const TRIPS = [
-  { week: 1, day: 'dom', out: '2027-01-03', back: '2027-01-10', flight: 3620 },
-  { week: 1, day: 'lun', out: '2027-01-04', back: '2027-01-11', flight: 3202 },
-  { week: 1, day: 'mar', out: '2027-01-05', back: '2027-01-12', flight: 2454 },
-  { week: 2, day: 'dom', out: '2027-01-10', back: '2027-01-17', flight: 2364 },
-  { week: 2, day: 'lun', out: '2027-01-11', back: '2027-01-18', flight: 2325 },
-  { week: 2, day: 'mar', out: '2027-01-12', back: '2027-01-19', flight: 2669 },
-  { week: 3, day: 'dom', out: '2027-01-17', back: '2027-01-24', flight: 3320 },
-  { week: 3, day: 'lun', out: '2027-01-18', back: '2027-01-25', flight: 2454 },
-  { week: 3, day: 'mar', out: '2027-01-19', back: '2027-01-26', flight: 2787 },
-  { week: 4, day: 'dom', out: '2027-01-24', back: '2027-01-31', flight: 2641 },
-  { week: 4, day: 'lun', out: '2027-01-25', back: '2027-02-01', flight: 2364 },
-  { week: 4, day: 'mar', out: '2027-01-26', back: '2027-02-02', flight: 2454 },
-  { week: 5, day: 'dom', out: '2027-01-31', back: '2027-02-07', flight: 2289 },
+  { day: 'dom', out: '2027-01-03', back: '2027-01-10', flight: 3620 },
+  { day: 'lun', out: '2027-01-04', back: '2027-01-11', flight: 3202 },
+  { day: 'mar', out: '2027-01-05', back: '2027-01-12', flight: 2454 },
+  { day: 'dom', out: '2027-01-10', back: '2027-01-17', flight: 2364 },
+  { day: 'lun', out: '2027-01-11', back: '2027-01-18', flight: 2325 },
+  { day: 'mar', out: '2027-01-12', back: '2027-01-19', flight: 2669 },
+  { day: 'dom', out: '2027-01-17', back: '2027-01-24', flight: 3320 },
+  { day: 'lun', out: '2027-01-18', back: '2027-01-25', flight: 2454 },
+  { day: 'mar', out: '2027-01-19', back: '2027-01-26', flight: 2787 },
+  { day: 'dom', out: '2027-01-24', back: '2027-01-31', flight: 2641 },
+  { day: 'lun', out: '2027-01-25', back: '2027-02-01', flight: 2364 },
+  { day: 'mar', out: '2027-01-26', back: '2027-02-02', flight: 2454 },
+  { day: 'dom', out: '2027-01-31', back: '2027-02-07', flight: 2289 },
+  { day: 'lun', out: '2027-02-01', back: '2027-02-08', flight: 2214 },
 ];
 
-const FEBRUARY_TRIP = { day: 'lun', out: '2027-02-01', back: '2027-02-08', flight: 2214 };
-
-const WEEKS = {
-  1: 'Semana 1 · salidas del 3 al 5 de enero',
-  2: 'Semana 2 · salidas del 10 al 12 de enero',
-  3: 'Semana 3 · salidas del 17 al 19 de enero',
-  4: 'Semana 4 · salidas del 24 al 26 de enero',
-  5: 'Semana 5 · salida del 31 de enero',
-};
-
 const LUGGAGE = {
-  classic: {
-    label: '2 carry-on + 1 valija de 23 kg',
-    price: 158,
-    approx: true,
-    detail: 'tarifa Classic para los dos, USD 92, más una valija de 23 kg desde USD 66 ida y vuelta',
-  },
+  classic: { label: '2 carry-on + 1 valija de 23 kg', price: 158, approx: true, detail: 'tarifa Classic para los dos (USD 92) + 1 valija desde USD 33 por tramo' },
   basic: { label: 'Solo mochila', price: 0, detail: 'tarifa Basic, una mochila de 6 kg cada uno' },
   comfort: { label: '2 valijas de 23 kg', price: 122, detail: 'tarifa Comfort para los dos, sin carry-on' },
-  extra: { label: '2 carry-on + 2 valijas', price: 420, detail: 'tarifa Extra para los dos, con cambios sin cargo' },
+  extra: { label: '2 carry-on + 2 valijas de 23 kg', price: 420, detail: 'tarifa Extra para los dos, con cambios sin cargo' },
 };
 
 const ROOMS = {
@@ -71,34 +42,38 @@ const ROOMS = {
 };
 
 const INSURANCE = {
-  oro: { label: 'Universal Oro', price: { 8: 112, 9: 125 } },
-  plata: { label: 'Universal Plata', price: { 8: 89, 9: 98 } },
+  oro: { label: 'Universal Oro', medical: 100000, price: { 8: 112, 9: 125 } },
+  plata: { label: 'Universal Plata', medical: 50000, price: { 8: 89, 9: 98 } },
   none: { label: 'Sin asistencia', price: { 8: 0, 9: 0 } },
 };
 
 const TRANSFER = {
-  private: { label: 'Traslado privado', price: 75 },
+  private: { label: 'Privado aeropuerto–hotel, ida y vuelta', price: 75 },
   none: { label: 'Sin traslado', price: 0 },
 };
 
 /* Estado y cálculos */
 
-const state = {
-  luggage: 'classic',
-  room: 'deluxe',
-  ins: 'oro',
-  transfer: 'private',
-  sort: 'week',
-};
+const state = { trip: '2027-01-11', luggage: 'classic', room: 'deluxe', ins: 'oro', transfer: 'private' };
 
 const money = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 });
 const usd = (n) => `USD ${money.format(Math.round(n))}`;
-const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
 const dateOf = (iso) => new Date(`${iso}T12:00:00`);
+const tripById = (id) => TRIPS.find((t) => t.out === id);
+const januaryTrips = TRIPS.filter((t) => t.out.startsWith('2027-01'));
 
 function dayLabel(iso) {
   const d = dateOf(iso);
   return `${WEEKDAYS[d.getDay()]} ${d.getDate()} de ${MONTHS[d.getMonth()]}`;
+}
+
+function rangeLabel(trip) {
+  const a = dateOf(trip.out);
+  const b = dateOf(trip.back);
+  const from = a.getMonth() === b.getMonth()
+    ? `${WEEKDAYS[a.getDay()]} ${a.getDate()}`
+    : dayLabel(trip.out);
+  return `${from} al ${dayLabel(trip.back)}`;
 }
 
 function googleUrl(trip) {
@@ -112,14 +87,14 @@ function googleUrl(trip) {
 const despegarUrl = (trip) => `https://www.despegar.com.ar/shop/flights/results/roundtrip/ROS/PUJ/${trip.out}/${trip.back}/2/0/0?currency=USD`;
 const bookingUrl = (trip) => `https://www.booking.com/hotel/do/luxury-bahia-principe-esmeralda-punta-cana2.es.html?checkin=${trip.out}&checkout=${trip.back}&group_adults=2&no_rooms=1&selected_currency=USD`;
 
-function compute(trip) {
+function compute(trip, s) {
   const days = SCHEDULE[trip.day].days;
   const parts = {
     flight: trip.flight,
-    luggage: LUGGAGE[state.luggage].price,
-    hotel: ROOMS[state.room].price,
-    transfer: TRANSFER[state.transfer].price,
-    ins: INSURANCE[state.ins].price[days],
+    luggage: LUGGAGE[s.luggage].price,
+    hotel: ROOMS[s.room].price,
+    transfer: TRANSFER[s.transfer].price,
+    ins: INSURANCE[s.ins].price[days],
   };
   const total = parts.flight + parts.luggage + parts.hotel + parts.transfer + parts.ins;
   return { ...parts, days, total };
@@ -134,139 +109,118 @@ function setState(patch) {
 
 function renderControls() {
   document.querySelectorAll('.seg[data-key]').forEach((group) => {
-    const key = group.dataset.key;
     group.querySelectorAll('button[data-value]').forEach((button) => {
-      button.setAttribute('aria-pressed', String(state[key] === button.dataset.value));
+      button.setAttribute('aria-pressed', String(state[group.dataset.key] === button.dataset.value));
     });
   });
-}
-
-function renderIncludes() {
-  const luggage = LUGGAGE[state.luggage];
-  const ins = INSURANCE[state.ins];
-  const parts = [
-    'el vuelo directo de Arajet (cambia según la fecha)',
-    `equipaje <strong>${luggage.approx ? '≈ ' : ''}${usd(luggage.price)}</strong> (${luggage.detail})`,
-    `hotel <strong>${usd(ROOMS[state.room].price)}</strong> (${ROOMS[state.room].label}, 7 noches todo incluido)`,
-    state.transfer === 'none' ? 'sin traslado' : `traslado privado ida y vuelta <strong>${usd(TRANSFER.private.price)}</strong>`,
-    state.ins === 'none'
-      ? 'sin asistencia'
-      : `${ins.label} <strong>${usd(ins.price[8])}</strong> si salen un lunes o <strong>${usd(ins.price[9])}</strong> si salen domingo o martes`,
-  ];
-  document.getElementById('includes').innerHTML = `Cada total suma ${parts.join(' + ')}.`;
-}
-
-function renderTop() {
-  const ranked = TRIPS
-    .map((trip) => ({ trip, r: compute(trip) }))
-    .sort((a, b) => a.r.total - b.r.total)
-    .slice(0, 3);
-  const tags = ['La más barata', 'Segunda', 'Tercera'];
-  const luggage = LUGGAGE[state.luggage];
-
-  document.getElementById('top').innerHTML = ranked.map(({ trip, r }, i) => `
-    <article class="package card${i === 0 ? ' is-featured' : ''}">
-      <div class="package-head">
-        <span class="badge ${i === 0 ? 'cheap' : ''}">${tags[i]}</span>
-        <span class="sub">Semana ${trip.week}</span>
-      </div>
-      <h3>${capitalize(dayLabel(trip.out))} al ${dayLabel(trip.back)}</h3>
-      <p class="package-text">${SCHEDULE[trip.day].out} · ${SCHEDULE[trip.day].hint}</p>
-      <dl class="package-lines">
-        <div><dt>Vuelo directo Arajet</dt><dd>${usd(r.flight)}</dd></div>
-        <div><dt>Equipaje: ${luggage.label}</dt><dd>${luggage.approx ? '≈ ' : ''}${usd(r.luggage)}</dd></div>
-        <div><dt>Esmeralda, 7 noches</dt><dd>${usd(r.hotel)}</dd></div>
-        <div><dt>${TRANSFER[state.transfer].label}</dt><dd>${usd(r.transfer)}</dd></div>
-        <div><dt>${INSURANCE[state.ins].label}${state.ins === 'none' ? '' : ` (${r.days} días)`}</dt><dd>${usd(r.ins)}</dd></div>
-      </dl>
-      <div class="package-total">
-        <span class="sub">Total para 2</span>
-        <strong>${usd(r.total)}</strong>
-        <span class="sub">${usd(r.total / 2)} por persona</span>
-      </div>
-      <div class="links">
-        <a class="btn small" href="${googleUrl(trip)}" target="_blank" rel="noopener">Ver vuelo</a>
-        <a class="btn small ghost" href="${bookingUrl(trip)}" target="_blank" rel="noopener">Ver hotel</a>
-      </div>
-    </article>`).join('');
-}
-
-function renderTrips() {
-  const rows = TRIPS.map((trip) => ({ trip, r: compute(trip) }));
-  const totals = rows.map((row) => row.r.total);
-  const min = Math.min(...totals);
-  const max = Math.max(...totals);
-  const bestOfWeek = {};
-  rows.forEach((row) => {
-    const current = bestOfWeek[row.trip.week];
-    if (!current || row.r.total < current.r.total) bestOfWeek[row.trip.week] = row;
+  document.getElementById('sel-trip').value = state.trip;
+  document.querySelectorAll('button[data-trip]').forEach((button) => {
+    const selected = button.dataset.trip === state.trip;
+    button.classList.toggle('is-active', selected);
+    button.textContent = selected ? 'Elegida' : 'Elegir';
   });
-
-  const byPrice = state.sort === 'price';
-  const list = byPrice ? rows.slice().sort((a, b) => a.r.total - b.r.total) : rows;
-  let lastWeek = null;
-
-  document.getElementById('trips-body').innerHTML = list.map((row) => {
-    const { trip, r } = row;
-    const schedule = SCHEDULE[trip.day];
-    const isCheapest = r.total === min;
-    const isBest = bestOfWeek[trip.week] === row;
-    const width = max === min ? 100 : 15 + (85 * (r.total - min)) / (max - min);
-    const header = !byPrice && trip.week !== lastWeek
-      ? `<tr class="week-row"><th colspan="5">${WEEKS[trip.week]}</th></tr>`
-      : '';
-    lastWeek = trip.week;
-    const badges = [
-      isCheapest ? '<span class="badge cheap">La más barata de enero</span>' : '',
-      isBest && !isCheapest ? '<span class="badge cheap">Mejor de la semana</span>' : '',
-    ].join('');
-    return `${header}
-      <tr class="${isBest ? 'is-best' : ''}">
-        <td>
-          <div class="airline">${capitalize(dayLabel(trip.out))}</div>
-          <span class="sub">${schedule.out}</span>
-          ${byPrice ? `<span class="sub">Semana ${trip.week}</span>` : ''}
-          ${badges ? `<div class="badges">${badges}</div>` : ''}
-        </td>
-        <td data-label="Vuelta">${capitalize(dayLabel(trip.back))}<span class="sub">${schedule.back}</span></td>
-        <td class="num" data-label="Vuelo (2 personas)">${usd(r.flight)}<span class="sub">${usd(r.flight / 2)} por persona</span></td>
-        <td class="num" data-label="Total 2 personas">
-          <strong>${usd(r.total)}</strong>
-          <span class="sub">${usd(r.total / 2)} por persona</span>
-          <span class="sub">${isCheapest ? 'La más barata' : `+${usd(r.total - min)} que la más barata`}</span>
-          <span class="total-bar" aria-hidden="true"><span style="width: ${width.toFixed(1)}%"></span></span>
-        </td>
-        <td>
-          <div class="actions">
-            <a class="btn small" href="${googleUrl(trip)}" target="_blank" rel="noopener">Vuelo</a>
-            <a class="btn small ghost" href="${despegarUrl(trip)}" target="_blank" rel="noopener">Despegar</a>
-            <a class="btn small ghost" href="${bookingUrl(trip)}" target="_blank" rel="noopener">Hotel</a>
-          </div>
-        </td>
-      </tr>`;
-  }).join('');
 }
 
-function renderFebruaryNote() {
-  const r = compute(FEBRUARY_TRIP);
-  const cheapest = Math.min(...TRIPS.map((trip) => compute(trip).total));
-  const diff = cheapest - r.total;
-  document.getElementById('feb-note').innerHTML = `<strong>Fuera de enero:</strong> saliendo el lunes 1 de febrero (vuelta el 8) el vuelo baja a ${usd(FEBRUARY_TRIP.flight)} y el total queda en ${usd(r.total)}${diff > 0 ? `, ${usd(diff)} menos que la opción más barata de enero` : ''}. <a href="${googleUrl(FEBRUARY_TRIP)}" target="_blank" rel="noopener">Ver vuelo</a>`;
+function renderResult() {
+  const trip = tripById(state.trip);
+  const r = compute(trip, state);
+  const cheapest = Math.min(...januaryTrips.map((t) => compute(t, state).total));
+  const diff = r.total - cheapest;
+  const schedule = SCHEDULE[trip.day];
+  const luggage = LUGGAGE[state.luggage];
+  const insurance = INSURANCE[state.ins];
+
+  let status = `<span class="status is-diff">${usd(diff)} más que la más barata</span>`;
+  if (diff === 0) status = '<span class="status is-ok">La más barata de enero</span>';
+  if (diff < 0) status = `<span class="status is-ok">${usd(-diff)} menos que la más barata de enero</span>`;
+
+  const items = [
+    {
+      key: 'flight', label: 'Vuelo directo Arajet', value: r.flight,
+      detail: `Ida ${dayLabel(trip.out)}: ${schedule.out}`,
+      sub: `Vuelta ${dayLabel(trip.back)}: ${schedule.back}`,
+    },
+    { key: 'ed', label: 'Equipaje', value: r.luggage, approx: luggage.approx, detail: `${luggage.label}: ${luggage.detail}` },
+    { key: 'apt', label: 'Hotel, 7 noches todo incluido', value: r.hotel, detail: `Bahia Principe Explore Esmeralda · ${ROOMS[state.room].label}` },
+    { key: 'car', label: 'Traslado', value: r.transfer, detail: TRANSFER[state.transfer].label },
+    {
+      key: 'ins', label: 'Asistencia al viajero', value: r.ins,
+      detail: insurance.medical ? `${insurance.label} · ${r.days} días · médica hasta USD ${money.format(insurance.medical)}` : '',
+    },
+  ].filter((item) => item.value > 0);
+
+  const notes = [];
+  if (trip.day === 'dom') notes.push('Sale el domingo a las 03:39: hay que estar en el aeropuerto el sábado a la noche.');
+  if (trip.day === 'mar') notes.push('Sale el martes a la 01:12: hay que estar en el aeropuerto el lunes a la noche.');
+  if (luggage.approx) notes.push('El equipaje es estimado: Arajet cobra la valija desde USD 33 por tramo si la agregan al comprar el pasaje.');
+  if (trip.out.startsWith('2027-02')) notes.push('Esta fecha ya es de febrero.');
+  if (state.ins === 'none') notes.push('Sin asistencia: revisen que la de su tarjeta cubra gastos médicos en República Dominicana.');
+
+  document.getElementById('calc-result').innerHTML = `
+    <div class="result-top">
+      <div>
+        <p class="kicker">Total para 2 · ${rangeLabel(trip)}</p>
+        <p class="total">${usd(r.total)}</p>
+        <p class="per-person">${usd(r.total / 2)} por persona</p>
+      </div>
+      ${status}
+    </div>
+    <div class="budget" role="img" aria-label="Composición del total">
+      <div class="budget-bar">
+        ${items.map((item) => `<span class="c-${item.key}" style="width:${(item.value / r.total) * 100}%"></span>`).join('')}
+      </div>
+    </div>
+    <ul class="breakdown">
+      ${items.map((item) => `
+        <li>
+          <i class="dot c-${item.key}"></i>
+          <div>
+            <strong>${item.label}</strong>
+            ${item.detail ? `<span class="sub">${item.detail}</span>` : ''}
+            ${item.sub ? `<span class="sub">${item.sub}</span>` : ''}
+          </div>
+          <b>${item.approx ? '≈ ' : ''}${usd(item.value)}</b>
+        </li>`).join('')}
+    </ul>
+    <div class="result-links">
+      <a class="btn small" href="${googleUrl(trip)}" target="_blank" rel="noopener">Ver vuelo en Google Flights</a>
+      <a class="btn small ghost" href="${despegarUrl(trip)}" target="_blank" rel="noopener">Ver en Despegar</a>
+      <a class="btn small ghost" href="${bookingUrl(trip)}" target="_blank" rel="noopener">Ver hotel en Booking</a>
+    </div>
+    ${notes.length ? `<div class="result-notes">${notes.map((n) => `<p>${n}</p>`).join('')}</div>` : ''}
+  `;
 }
 
 function render() {
   renderControls();
-  renderIncludes();
-  renderTop();
-  renderTrips();
-  renderFebruaryNote();
+  renderResult();
 }
 
 /* Eventos */
 
+function goToCalculator() {
+  document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const result = document.getElementById('calc-result');
+  result.classList.remove('flash');
+  void result.offsetWidth;
+  result.classList.add('flash');
+}
+
 document.addEventListener('click', (event) => {
   const segButton = event.target.closest('.seg button[data-value]');
-  if (segButton) setState({ [segButton.closest('.seg').dataset.key]: segButton.dataset.value });
+  if (segButton) {
+    setState({ [segButton.closest('.seg').dataset.key]: segButton.dataset.value });
+    return;
+  }
+
+  const tripButton = event.target.closest('[data-trip]');
+  if (tripButton) {
+    event.preventDefault();
+    setState({ trip: tripButton.dataset.trip });
+    goToCalculator();
+  }
 });
+
+document.getElementById('sel-trip').addEventListener('change', (event) => setState({ trip: event.target.value }));
 
 render();

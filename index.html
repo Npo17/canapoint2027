@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Punta Cana · Enero 2027 · Precios por semana</title>
-  <meta name="description" content="Vuelo directo Rosario–Punta Cana, Bahia Principe Explore Esmeralda, traslado y Universal Assistance: precios para 2 personas en cada semana de enero de 2027.">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <title>Punta Cana · Enero 2027 · Comparador de viaje</title>
+  <meta name="description" content="Vuelo directo Rosario–Punta Cana, Bahia Principe Explore Esmeralda, traslado y Universal Assistance: comparativa de precios para 2 personas en cada semana de enero de 2027.">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
   <header class="hero">
     <div class="wrap">
       <p class="eyebrow">Enero 2027 · 2 personas · 7 noches</p>
-      <h1>Punta Cana desde Rosario</h1>
-      <p class="lead">Vuelo <strong>directo</strong> de Arajet Rosario ↔ Punta Cana, 7 noches todo incluido en el <strong>Bahia Principe Explore Esmeralda</strong> (ex Luxury Esmeralda), traslado aeropuerto–hotel y Universal Assistance. Todos los precios son para los dos y se consultaron el 14 de octubre de 2026.</p>
+      <h1>Viaje a Punta Cana</h1>
+      <p class="lead">Vuelo <strong>directo</strong> Rosario ↔ Punta Cana con Arajet, 7 noches todo incluido en el <strong>Bahia Principe Explore Esmeralda</strong> (ex Luxury Esmeralda), traslado aeropuerto–hotel y Universal Assistance, viajando con <strong>2 carry-on y 1 valija de 23 kg</strong>. Todos los precios son para los dos y se consultaron el 14 de octubre de 2026 en Google Flights, Despegar, Arajet y Booking.</p>
       <nav class="toc" aria-label="Secciones">
-        <a href="#resumen">Resumen</a>
-        <a href="#semanas">Semana por semana</a>
-        <a href="#vuelos">Vuelos y equipaje</a>
+        <a href="#combinaciones">Combinaciones</a>
+        <a href="#semanas">Comparativa por semana</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#vuelos">Vuelos</a>
         <a href="#hotel">Hotel</a>
         <a href="#traslado">Traslado</a>
         <a href="#asistencia">Asistencia</a>
@@ -27,80 +28,451 @@
   </header>
 
   <main class="wrap">
-    <section id="resumen" class="section">
+    <section id="combinaciones" class="section">
       <div class="section-head">
         <h2>Las tres semanas más baratas</h2>
-        <p class="muted">Las cuatro opciones más baratas están a menos de USD 80 de diferencia, así que conviene elegir por horario. La del lunes 11 al 18 es la más barata que cae entera en enero y la vuelta llega el mismo día.</p>
+        <p class="muted">Cada total incluye vuelo directo, equipaje (2 carry-on + 1 valija de 23 kg), 7 noches todo incluido en el Esmeralda, traslado privado y Universal Oro. Las tres están a menos de USD 70 de diferencia, así que conviene elegir por fecha y horario.</p>
       </div>
-      <div class="options card">
-        <div class="control">
-          <span class="control-label">Equipaje (para los dos)</span>
-          <div class="seg" data-key="luggage">
-            <button type="button" data-value="classic">2 carry-on + 1 valija</button>
-            <button type="button" data-value="basic">Solo mochila</button>
-            <button type="button" data-value="comfort">2 valijas</button>
-            <button type="button" data-value="extra">2 carry-on + 2 valijas</button>
+      <div class="packages">
+        <article class="package card is-featured">
+          <div class="package-head">
+            <span class="badge rec">Recomendado</span>
+            <span class="sub">11 al 18 de enero</span>
           </div>
-        </div>
-        <div class="control">
-          <span class="control-label">Habitación</span>
-          <div class="seg" data-key="room">
-            <button type="button" data-value="deluxe">Junior Suite Deluxe</button>
-            <button type="button" data-value="swimup">Junior Suite con piscina</button>
+          <h3>Lunes 11 al lunes 18</h3>
+          <p class="package-text">La más barata que cae entera en enero, y con el mejor horario: sale el lunes a las 05:55 y la vuelta es de día, así que llegan a Rosario el mismo lunes a las 23:18.</p>
+          <dl class="package-lines">
+            <div><dt>Vuelo directo Arajet</dt><dd>USD 2.325</dd></div>
+            <div><dt>Equipaje: 2 carry-on + 1 valija</dt><dd>≈ USD 158</dd></div>
+            <div><dt>Esmeralda, 7 noches</dt><dd>USD 3.265</dd></div>
+            <div><dt>Traslado privado</dt><dd>USD 75</dd></div>
+            <div><dt>Universal Oro (8 días)</dt><dd>USD 112</dd></div>
+          </dl>
+          <div class="package-total">
+            <span class="sub">Total para 2</span>
+            <strong>USD 5.935</strong>
+            <span class="sub">USD 2.968 por persona</span>
           </div>
-        </div>
-        <div class="control">
-          <span class="control-label">Asistencia al viajero</span>
-          <div class="seg" data-key="ins">
-            <button type="button" data-value="oro">Universal Oro</button>
-            <button type="button" data-value="plata">Universal Plata</button>
-            <button type="button" data-value="none">Sin asistencia</button>
+          <p class="package-extra">USD 23 más que la más barata.</p>
+          <a class="btn" href="#calculadora" data-trip="2027-01-11">Ver en la calculadora</a>
+        </article>
+        <article class="package card">
+          <div class="package-head">
+            <span class="badge cheap">Más barato</span>
+            <span class="sub">31 de enero al 7 de febrero</span>
           </div>
-        </div>
-        <div class="control">
-          <span class="control-label">Traslado aeropuerto–hotel</span>
-          <div class="seg" data-key="transfer">
-            <button type="button" data-value="private">Privado ida y vuelta</button>
-            <button type="button" data-value="none">Sin traslado</button>
+          <h3>Domingo 31 al domingo 7</h3>
+          <p class="package-text">La más barata de todas. Sale el domingo a las 03:39, así que hay que ir al aeropuerto el sábado a la noche, y la vuelta llega a Rosario el lunes 8 a las 04:55.</p>
+          <dl class="package-lines">
+            <div><dt>Vuelo directo Arajet</dt><dd>USD 2.289</dd></div>
+            <div><dt>Equipaje: 2 carry-on + 1 valija</dt><dd>≈ USD 158</dd></div>
+            <div><dt>Esmeralda, 7 noches</dt><dd>USD 3.265</dd></div>
+            <div><dt>Traslado privado</dt><dd>USD 75</dd></div>
+            <div><dt>Universal Oro (9 días)</dt><dd>USD 125</dd></div>
+          </dl>
+          <div class="package-total">
+            <span class="sub">Total para 2</span>
+            <strong>USD 5.912</strong>
+            <span class="sub">USD 2.956 por persona</span>
           </div>
-        </div>
-        <p class="includes" id="includes" aria-live="polite"></p>
+          <p class="package-extra">Es la última salida de enero: la estadía termina el 7 de febrero.</p>
+          <a class="btn" href="#calculadora" data-trip="2027-01-31">Ver en la calculadora</a>
+        </article>
+        <article class="package card">
+          <div class="package-head">
+            <span class="badge">Fin de enero</span>
+            <span class="sub">25 de enero al 1 de febrero</span>
+          </div>
+          <h3>Lunes 25 al lunes 1</h3>
+          <p class="package-text">Mismo horario que la recomendada: sale el lunes a las 05:55 y vuelve de día, llegando a Rosario el lunes 1 de febrero a las 23:18.</p>
+          <dl class="package-lines">
+            <div><dt>Vuelo directo Arajet</dt><dd>USD 2.364</dd></div>
+            <div><dt>Equipaje: 2 carry-on + 1 valija</dt><dd>≈ USD 158</dd></div>
+            <div><dt>Esmeralda, 7 noches</dt><dd>USD 3.265</dd></div>
+            <div><dt>Traslado privado</dt><dd>USD 75</dd></div>
+            <div><dt>Universal Oro (8 días)</dt><dd>USD 112</dd></div>
+          </dl>
+          <div class="package-total">
+            <span class="sub">Total para 2</span>
+            <strong>USD 5.974</strong>
+            <span class="sub">USD 2.987 por persona</span>
+          </div>
+          <p class="package-extra">USD 62 más que la más barata.</p>
+          <a class="btn" href="#calculadora" data-trip="2027-01-25">Ver en la calculadora</a>
+        </article>
       </div>
-      <div class="packages" id="top"></div>
     </section>
 
     <section id="semanas" class="section">
       <div class="section-head">
-        <h2>Semana por semana</h2>
-        <p class="muted">Arajet vuela directo los domingos, lunes y martes. Cada fila es una estadía de 7 noches con el total para los dos, según lo que elijas arriba. En verde, la más barata de cada semana.</p>
-      </div>
-      <div class="toolbar">
-        <div class="seg" data-key="sort">
-          <button type="button" data-value="week">Por semana</button>
-          <button type="button" data-value="price">Más barato primero</button>
-        </div>
+        <h2>Comparativa semana por semana</h2>
+        <p class="muted">Arajet vuela directo los domingos, lunes y martes. Cada fila es una estadía de 7 noches. El total para los dos suma el vuelo, el equipaje (≈ USD 158), el hotel (USD 3.265), el traslado (USD 75) y Universal Oro (USD 112 saliendo lunes, USD 125 saliendo domingo o martes). En verde, la mejor opción de cada semana.</p>
       </div>
       <div class="table-wrap">
         <table class="trips-table stack">
           <thead>
             <tr>
-              <th>Ida</th>
-              <th>Vuelta</th>
-              <th class="num">Vuelo (2 personas)</th>
-              <th class="num">Total 2 personas</th>
-              <th><span class="visually-hidden">Links</span></th>
+              <th>Fechas</th>
+              <th>Horarios</th>
+              <th class="num">Vuelo 2 personas</th>
+              <th class="num">Total viaje 2 personas</th>
+              <th><span class="visually-hidden">Acciones</span></th>
             </tr>
           </thead>
-          <tbody id="trips-body"></tbody>
+          <tbody>
+            <tr class="week-row"><th colspan="5">Semana 1 · salidas del 3 al 5 de enero</th></tr>
+            <tr>
+              <td>
+                <div class="airline">Domingo 3 al domingo 10 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 03:39 → PUJ 10:22<span class="sub">Vuelta PUJ 20:15 → ROS 04:55 del lunes</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 3.620</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 7.243</strong>
+                <span class="sub">USD 3.622 por persona</span>
+                <span class="sub">USD 1.331 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:100%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-03">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%203%20al%2010%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="airline">Lunes 4 al lunes 11 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 05:55 → PUJ 12:38<span class="sub">Vuelta PUJ 14:38 → ROS 23:18</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 3.202</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.812</strong>
+                <span class="sub">USD 3.406 por persona</span>
+                <span class="sub">USD 900 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:72%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-04">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%204%20al%2011%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="is-best">
+              <td>
+                <div class="airline">Martes 5 al martes 12 de enero</div>
+                <div class="badges"><span class="badge cheap">Mejor de la semana</span></div>
+              </td>
+              <td data-label="Horarios">Ida ROS 01:12 → PUJ 07:55<span class="sub">Vuelta PUJ 18:10 → ROS 02:50 del miércoles</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.454</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.077</strong>
+                <span class="sub">USD 3.039 por persona</span>
+                <span class="sub">USD 165 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:26%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-05">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%205%20al%2012%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="week-row"><th colspan="5">Semana 2 · salidas del 10 al 12 de enero</th></tr>
+            <tr>
+              <td>
+                <div class="airline">Domingo 10 al domingo 17 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 03:39 → PUJ 10:22<span class="sub">Vuelta PUJ 20:15 → ROS 04:55 del lunes</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.364</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 5.987</strong>
+                <span class="sub">USD 2.994 por persona</span>
+                <span class="sub">USD 75 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:20%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-10">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2010%20al%2017%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="is-best">
+              <td>
+                <div class="airline">Lunes 11 al lunes 18 de enero</div>
+                <div class="badges"><span class="badge rec">Recomendada</span><span class="badge cheap">Mejor de la semana</span></div>
+              </td>
+              <td data-label="Horarios">Ida ROS 05:55 → PUJ 12:38<span class="sub">Vuelta PUJ 14:38 → ROS 23:18</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.325</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 5.935</strong>
+                <span class="sub">USD 2.968 por persona</span>
+                <span class="sub">USD 23 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:16%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small is-active" data-trip="2027-01-11">Elegida</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2011%20al%2018%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="airline">Martes 12 al martes 19 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 01:12 → PUJ 07:55<span class="sub">Vuelta PUJ 18:10 → ROS 02:50 del miércoles</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.669</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.292</strong>
+                <span class="sub">USD 3.146 por persona</span>
+                <span class="sub">USD 380 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:39%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-12">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2012%20al%2019%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="week-row"><th colspan="5">Semana 3 · salidas del 17 al 19 de enero</th></tr>
+            <tr>
+              <td>
+                <div class="airline">Domingo 17 al domingo 24 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 03:39 → PUJ 10:22<span class="sub">Vuelta PUJ 20:15 → ROS 04:55 del lunes</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 3.320</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.943</strong>
+                <span class="sub">USD 3.472 por persona</span>
+                <span class="sub">USD 1.031 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:81%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-17">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2017%20al%2024%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="is-best">
+              <td>
+                <div class="airline">Lunes 18 al lunes 25 de enero</div>
+                <div class="badges"><span class="badge cheap">Mejor de la semana</span></div>
+              </td>
+              <td data-label="Horarios">Ida ROS 05:55 → PUJ 12:38<span class="sub">Vuelta PUJ 14:38 → ROS 23:18</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.454</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.064</strong>
+                <span class="sub">USD 3.032 por persona</span>
+                <span class="sub">USD 152 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:25%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-18">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2018%20al%2025%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="airline">Martes 19 al martes 26 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 01:12 → PUJ 07:55<span class="sub">Vuelta PUJ 18:10 → ROS 02:50 del miércoles</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.787</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.410</strong>
+                <span class="sub">USD 3.205 por persona</span>
+                <span class="sub">USD 498 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:47%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-19">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2019%20al%2026%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="week-row"><th colspan="5">Semana 4 · salidas del 24 al 26 de enero</th></tr>
+            <tr>
+              <td>
+                <div class="airline">Domingo 24 al domingo 31 de enero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 03:39 → PUJ 10:22<span class="sub">Vuelta PUJ 20:15 → ROS 04:55 del lunes</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.641</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.264</strong>
+                <span class="sub">USD 3.132 por persona</span>
+                <span class="sub">USD 352 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:37%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-24">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2024%20al%2031%20de%20enero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="is-best">
+              <td>
+                <div class="airline">Lunes 25 de enero al lunes 1 de febrero</div>
+                <div class="badges"><span class="badge cheap">Mejor de la semana</span></div>
+              </td>
+              <td data-label="Horarios">Ida ROS 05:55 → PUJ 12:38<span class="sub">Vuelta PUJ 14:38 → ROS 23:18</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.364</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 5.974</strong>
+                <span class="sub">USD 2.987 por persona</span>
+                <span class="sub">USD 62 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:19%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-25">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2025%20de%20enero%20al%201%20de%20febrero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="airline">Martes 26 de enero al martes 2 de febrero</div>
+                
+              </td>
+              <td data-label="Horarios">Ida ROS 01:12 → PUJ 07:55<span class="sub">Vuelta PUJ 18:10 → ROS 02:50 del miércoles</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.454</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 6.077</strong>
+                <span class="sub">USD 3.039 por persona</span>
+                <span class="sub">USD 165 más que la más barata</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:26%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-26">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2026%20de%20enero%20al%202%20de%20febrero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="week-row"><th colspan="5">Semana 5 · salida del 31 de enero</th></tr>
+            <tr class="is-best">
+              <td>
+                <div class="airline">Domingo 31 de enero al domingo 7 de febrero</div>
+                <div class="badges"><span class="badge cheap">La más barata</span></div>
+              </td>
+              <td data-label="Horarios">Ida ROS 03:39 → PUJ 10:22<span class="sub">Vuelta PUJ 20:15 → ROS 04:55 del lunes</span></td>
+              <td class="num" data-label="Vuelo 2 personas">USD 2.289</td>
+              <td class="num" data-label="Total viaje 2 personas">
+                <strong>USD 5.912</strong>
+                <span class="sub">USD 2.956 por persona</span>
+                <span class="sub">La más barata de enero</span>
+                <span class="total-bar" aria-hidden="true"><span style="width:15%"></span></span>
+              </td>
+              <td>
+                <div class="actions">
+                  <button type="button" class="btn small" data-trip="2027-01-31">Elegir</button>
+                  <a class="btn small ghost" href="https://www.google.com/travel/flights?hl=es&amp;curr=USD&amp;q=vuelos%20directos%20de%20Rosario%20a%20Punta%20Cana%20del%2031%20de%20enero%20al%207%20de%20febrero%202027%202%20adultos" target="_blank" rel="noopener">Ver vuelo</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <p class="note" id="feb-note"></p>
-      <p class="note">El precio del vuelo es la tarifa más barata de Arajet (Basic, solo mochila); el equipaje se suma aparte. «Vuelo» abre Google Flights con la búsqueda de directos, donde aparecen Arajet y Despegar; «Hotel» abre Booking con las fechas cargadas.</p>
+      <p class="note"><strong>Fuera de enero:</strong> saliendo el lunes 1 de febrero (vuelta el 8) el vuelo cuesta USD 2.214 y el total queda en USD 5.824, USD 88 menos que la opción más barata de enero.</p>
+      <p class="note">El vuelo es la tarifa más barata de Arajet (Basic, solo mochila) y el equipaje se suma aparte. «Ver vuelo» abre Google Flights con la búsqueda de vuelos directos para esas fechas.</p>
+    </section>
+
+    <section id="calculadora" class="section">
+      <div class="section-head">
+        <h2>Armá tu viaje</h2>
+        <p class="muted">Elegí la fecha, el equipaje, la habitación, la asistencia y el traslado. El total se recalcula al instante.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-controls card">
+          <label class="control">
+            <span class="control-label">Fechas (7 noches)</span>
+            <select id="sel-trip">
+              <optgroup label="Semana 1 · salidas del 3 al 5 de enero">
+                <option value="2027-01-03">Domingo 3 al domingo 10 de enero · vuelo USD 3.620</option>
+                <option value="2027-01-04">Lunes 4 al lunes 11 de enero · vuelo USD 3.202</option>
+                <option value="2027-01-05">Martes 5 al martes 12 de enero · vuelo USD 2.454</option>
+              </optgroup>
+              <optgroup label="Semana 2 · salidas del 10 al 12 de enero">
+                <option value="2027-01-10">Domingo 10 al domingo 17 de enero · vuelo USD 2.364</option>
+                <option value="2027-01-11" selected>Lunes 11 al lunes 18 de enero · vuelo USD 2.325</option>
+                <option value="2027-01-12">Martes 12 al martes 19 de enero · vuelo USD 2.669</option>
+              </optgroup>
+              <optgroup label="Semana 3 · salidas del 17 al 19 de enero">
+                <option value="2027-01-17">Domingo 17 al domingo 24 de enero · vuelo USD 3.320</option>
+                <option value="2027-01-18">Lunes 18 al lunes 25 de enero · vuelo USD 2.454</option>
+                <option value="2027-01-19">Martes 19 al martes 26 de enero · vuelo USD 2.787</option>
+              </optgroup>
+              <optgroup label="Semana 4 · salidas del 24 al 26 de enero">
+                <option value="2027-01-24">Domingo 24 al domingo 31 de enero · vuelo USD 2.641</option>
+                <option value="2027-01-25">Lunes 25 de enero al lunes 1 de febrero · vuelo USD 2.364</option>
+                <option value="2027-01-26">Martes 26 de enero al martes 2 de febrero · vuelo USD 2.454</option>
+              </optgroup>
+              <optgroup label="Semana 5 · salida del 31 de enero">
+                <option value="2027-01-31">Domingo 31 de enero al domingo 7 de febrero · vuelo USD 2.289</option>
+              </optgroup>
+              <optgroup label="Febrero">
+                <option value="2027-02-01">Lunes 1 al lunes 8 de febrero · vuelo USD 2.214</option>
+              </optgroup>
+            </select>
+          </label>
+          <div class="control">
+            <span class="control-label">Equipaje (para los dos)</span>
+            <div class="seg" data-key="luggage">
+              <button type="button" data-value="classic" aria-pressed="true">2 carry-on + 1 valija</button>
+              <button type="button" data-value="basic" aria-pressed="false">Solo mochila</button>
+              <button type="button" data-value="comfort" aria-pressed="false">2 valijas</button>
+              <button type="button" data-value="extra" aria-pressed="false">2 carry-on + 2 valijas</button>
+            </div>
+          </div>
+          <div class="control">
+            <span class="control-label">Habitación</span>
+            <div class="seg" data-key="room">
+              <button type="button" data-value="deluxe" aria-pressed="true">Junior Suite Deluxe</button>
+              <button type="button" data-value="swimup" aria-pressed="false">Junior Suite con piscina</button>
+            </div>
+          </div>
+          <div class="control">
+            <span class="control-label">Asistencia al viajero</span>
+            <div class="seg" data-key="ins">
+              <button type="button" data-value="oro" aria-pressed="true">Universal Oro</button>
+              <button type="button" data-value="plata" aria-pressed="false">Universal Plata</button>
+              <button type="button" data-value="none" aria-pressed="false">Sin asistencia</button>
+            </div>
+          </div>
+          <div class="control">
+            <span class="control-label">Traslado aeropuerto–hotel</span>
+            <div class="seg" data-key="transfer">
+              <button type="button" data-value="private" aria-pressed="true">Privado ida y vuelta</button>
+              <button type="button" data-value="none" aria-pressed="false">Sin traslado</button>
+            </div>
+          </div>
+        </div>
+        <div class="calc-result card" id="calc-result" aria-live="polite">
+          <p class="kicker">Total para 2 · lunes 11 al lunes 18 de enero</p>
+          <p class="total">USD 5.935</p>
+          <p class="per-person">USD 2.968 por persona</p>
+        </div>
+      </div>
     </section>
 
     <section id="vuelos" class="section">
       <div class="section-head">
-        <h2>Vuelos y equipaje</h2>
+        <h2>Vuelos</h2>
         <p class="muted">Arajet es la única aerolínea con vuelo directo Rosario–Punta Cana, de unas 7 h 40 m. En enero sale tres veces por semana, siempre en el mismo horario.</p>
       </div>
       <div class="table-wrap">
@@ -278,8 +650,8 @@
 
     <section id="asistencia" class="section">
       <div class="section-head">
-        <h2>Universal Assistance</h2>
-        <p class="muted">Precio para los dos que muestra Despegar al sumarla al vuelo. Las salidas de lunes cubren 8 días; las de domingo y martes cubren 9, porque la vuelta aterriza después de medianoche.</p>
+        <h2>Asistencia al viajero</h2>
+        <p class="muted">Universal Assistance, precio para los dos que muestra Despegar al sumarla al vuelo. Las salidas de lunes cubren 8 días; las de domingo y martes cubren 9, porque la vuelta aterriza después de medianoche.</p>
       </div>
       <div class="table-wrap">
         <table class="stack">
